@@ -8,7 +8,7 @@ import numpy as np
 col1, col2 = st.columns([3, 1])  # Define uma coluna maior à esquerda e uma menor à direita
 
 with col1:
-    st.title("Relatório de Vendas")
+    st.title("Inteligência de Mercado")
     
 with col2:
     # Exibe a imagem na coluna direita
@@ -221,7 +221,7 @@ with abas[3]:
     # Plotar o gráfico se houver dados
     if not total_vendas_mes.empty:
         fig, ax = plt.subplots(figsize=(10, 6))
-        ax.plot(total_vendas_mes['MES'].astype(str), total_vendas_mes['VALOR_VENDA'], marker='o', linestyle='-', color='purple')
+        ax.plot(total_vendas_mes['MES'].astype(str), total_vendas_mes['VALOR_VENDA'], marker='o', linestyle='-', color='#013A61')
 
         # Definir detalhes do gráfico
         ax.set_xlabel('Mês')
