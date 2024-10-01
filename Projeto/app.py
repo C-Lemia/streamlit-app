@@ -36,6 +36,13 @@ st.markdown("""
     div[data-testid="stTabs"] button:hover {
         color: #013A61; /* Cor das letras das abas quando o cursor passa por cima */
     }
+            
+     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    
+    /* Aplicar a fonte Roboto ao seu aplicativo */
+    .stApp {
+        font-family: 'Roboto', sans-serif;
+    }
     </style>
     """, unsafe_allow_html=True)
 
