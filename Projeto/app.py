@@ -47,16 +47,29 @@ st.markdown(
         color: #013A61; /* Cor das letras das abas ao passar o cursor */
     }
 
+    /* Estilizar os widgets para melhor responsividade */
+    .stSelectbox, .stMultiselect {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* Garantir que os widgets sejam visíveis em telas menores */
+    @media (max-width: 600px) {
+        .stSelectbox, .stMultiselect {
+            font-size: 16px !important;
+        }
+    }
+
     /* Opcional: Estilizar outros elementos conforme necessário */
     /* Exemplo: Alterar a cor dos títulos */
     .stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp h5, .stApp h6 {
         color: #013A61;
     }
-
     </style>
     """,
     unsafe_allow_html=True
 )
+
 
 
 # Carregar os arquivos CSV fornecidos
