@@ -12,7 +12,7 @@ with col1:
     
 with col2:
     # Exibe a imagem na coluna direita
-    st.image('C:/Users/camil/OneDrive/Área de Trabalho/Estudos TI/Versionamento GIT/python/Captura de tela 2024-10-01 114828.png', use_column_width=True)
+    st.image('Captura de tela 2024-10-01 114828.png', use_column_width=True)
 
 # Aplicar cor de fundo personalizada no Strea
 # Aplicar cor de fundo personalizada no Streamlit
