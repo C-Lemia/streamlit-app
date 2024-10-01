@@ -18,33 +18,45 @@ with col2:
 
 # Aplicar cor de fundo personalizada no Strea
 # Aplicar cor de fundo personalizada no Streamlit
-st.markdown("""
+# Aplicar estilos personalizados usando CSS
+st.markdown(
+    """
     <style>
+    /* Importar a fonte Roboto do Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    /* Aplicar a fonte Roboto a todo o aplicativo */
     .stApp {
-        background-color: #F0F8FF;
+        font-family: 'Roboto', sans-serif;
+        background-color: #F0F8FF; /* Cor de fundo personalizada */
     }
 
+    /* Estilizar as abas não selecionadas */
     div[data-testid="stTabs"] button {
         color: #013A61; /* Cor das letras das abas não selecionadas */
     }
 
+    /* Estilizar a aba selecionada */
     div[data-testid="stTabs"] button[aria-selected="true"] {
         color: #013A61; /* Cor das letras da aba selecionada */
-        border-bottom: 2px solid #013A61; /* Cor da linha da aba selecionada */
+        border-bottom: 2px solid #013A61; /* Linha inferior da aba selecionada */
     }
 
+    /* Estilizar as abas ao passar o cursor */
     div[data-testid="stTabs"] button:hover {
-        color: #013A61; /* Cor das letras das abas quando o cursor passa por cima */
+        color: #013A61; /* Cor das letras das abas ao passar o cursor */
     }
-            
-     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-    
-    /* Aplicar a fonte Roboto ao seu aplicativo */
-    .stApp {
-        font-family: 'Roboto', sans-serif;
+
+    /* Opcional: Estilizar outros elementos conforme necessário */
+    /* Exemplo: Alterar a cor dos títulos */
+    .stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp h5, .stApp h6 {
+        color: #013A61;
     }
+
     </style>
-    """, unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True
+)
 
 
 # Carregar os arquivos CSV fornecidos
