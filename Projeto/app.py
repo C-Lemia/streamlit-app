@@ -21,7 +21,7 @@ with col2:
 st.markdown("""
     <style>
     .stApp {
-        
+        background-color: #F0F8FF;
     }
 
     div[data-testid="stTabs"] button {
