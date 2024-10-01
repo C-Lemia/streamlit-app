@@ -89,6 +89,18 @@ with abas[0]:
     # Exibir o gráfico no Streamlit
     st.pyplot(fig)
 
+    # Análise e recomendações práticas
+    st.subheader("Recomendações")
+
+    # Aplicar a cor de fundo no texto
+    st.markdown(f"""
+        <div style="background-color:#013A61; padding:10px; border-radius:5px;">
+            <p style="color:white;">A análise mostra os 5 produtos mais vendidos na Filial {filial_selecionada} e indicam uma preferência clara do público local. 
+            Recomenda-se aumentar o estoque desses produtos para evitar rupturas e ajustar o marketing para focar nesses itens.
+            Ofertas promocionais em torno desses produtos podem atrair mais clientes e fidelizar a base de consumidores.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
 # Segunda aba: Mostrar os 5 produtos menos vendidos por filial
 with abas[1]:
     st.header("Produtos Menos Vendidos por Filial")
@@ -114,6 +126,18 @@ with abas[1]:
     
     # Exibir o gráfico no Streamlit
     st.pyplot(fig)
+
+    # Análise e recomendações práticas
+    st.subheader("Recomendações")
+
+    # Aplicar a cor de fundo no texto
+    st.markdown(f"""
+        <div style="background-color:#013A61; padding:10px; border-radius:5px;">
+            <p style="color:white;">Os produtos menos vendidos na Filial {filial_selecionada} e sugerem uma demanda reduzida ou uma oferta desajustada. 
+            Recomenda-se investigar as razões para o baixo desempenho, como preço, localização dos produtos na loja ou falta de divulgação. 
+            Se o produto não se alinhar com o público local, é possível reduzir o estoque ou substituí-lo por itens mais populares.</p>
+        </div>
+        """, unsafe_allow_html=True)
 
 # Terceira aba: Comparar os 10 produtos mais vendidos entre até três filiais
 with abas[2]:
@@ -152,6 +176,20 @@ with abas[2]:
         
         # Exibir o gráfico no Streamlit
         st.pyplot(fig)
+
+
+        # Análise e recomendações práticas
+        st.subheader("Recomendações")
+        
+        # Aplicar a cor de fundo no texto
+        st.markdown(f"""
+        <div style="background-color:#013A61; padding:10px; border-radius:5px;">
+            <p style="color:white;">A comparação entre as filiais revela como os produtos têm diferentes desempenhos em diferentes localidades. 
+            Considere ajustar a distribuição de produtos com base nas preferências locais. Produtos que são bem-sucedidos em uma filial 
+            podem se beneficiar de campanhas de marketing e promoções direcionadas em outras filiais para aumentar as vendas.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
     else:
         st.write("Por favor, selecione até 3 filiais para comparação.")
     
@@ -167,7 +205,7 @@ vendasf_df['MES'] = vendasf_df['DATA_VENDA'].dt.to_period('M')
 
 # Quarta aba: Gráfico de total de vendas em R$ por mês para uma filial selecionada
 with abas[3]:
-    st.header("Total de Vendas em R$ por Mês por Filial")
+    st.header("Total de Vendas por Mês - Filial")
     
     # Widget para selecionar a filial
     filial_selecionada = st.selectbox('Selecione a Filial para ver as Vendas Mensais em R$', filiais_df['NOME_FILIAL'].unique(), key="vendas_mensais_reais")
@@ -191,5 +229,15 @@ with abas[3]:
 
         # Exibir o gráfico no Streamlit
         st.pyplot(fig)
+
+        # Análise e recomendações práticas
+        st.subheader("Recomendações")
+        st.markdown(f"""
+        <div style="background-color:#013A61; padding:10px; border-radius:5px;">
+            <p style="color:white;">Com base nas tendências de vendas mensais da Filial {filial_selecionada}, recomenda-se ajustar os estoques para prever períodos de alta demanda. 
+            Além disso, promoções específicas podem ser planejadas para meses de baixa performance, incentivando as vendas.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
     else:
         st.write("Nenhum dado de vendas encontrado para a filial selecionada.")
